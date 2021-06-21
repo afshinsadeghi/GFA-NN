@@ -1,0 +1,15 @@
+# 14
+concept:agentcollaborateswithagent	0
+concept:subpartof	1
+concept:televisionstationaffiliatedwith	2
+concept:agentbelongstoorganization	3
+concept:companyeconomicsector	4
+concept:agentcontrols	5
+concept:subpartoforganization	6
+concept:acquired	7
+concept:organizationheadquarteredincity	8
+concept:organizationhiredperson	9
+concept:topmemberoforganization	10
+concept:worksfor	11
+concept:headquarteredin	12
+concept:organizationterminatedperson	13
