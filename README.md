@@ -28,10 +28,10 @@ biokg:
 python run_with5_gpu.py --init_checkpoint ../experiments/kge_baselines_biokg_400_600_850_2 --do_train --do_test -save ../experiments/kge_baselines_biokg_400_600_850 --data_path ../data/biokg  --model MDE  -n 850 -b 600 -d 400 -g 2.5 -a 2.5 -adv -lr .0005 --max_steps 700000 --test_batch_size 2 --valid_steps 10000 --log_steps 10000 --do_valid  -node_feat_path ../data/biokg/train_node_features --cuda -psi 14.0
 ```
 
-### Cite :
+### **Citation** :
 
-**Citation**
-If you use the codes, please cite the following paper:
+
+If you use the model, please cite the following paper:
 ```
 
 @inproceedings{gfa2021ECML,
