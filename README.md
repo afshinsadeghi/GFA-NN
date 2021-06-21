@@ -35,7 +35,7 @@ If you use the model, please cite the following paper:
 ```
 
 @inproceedings{gfa2021ECML,
-  title={Embedding Knowledge Graphs Attentive toPositional and Centrality Qualities},
+  title={Embedding Knowledge Graphs Attentive to Positional and Centrality Qualities},
   author={Sadeghi, Afshin and Collarana, Diego and  Graux, Damien and Lehmann, Jens},
   booktitle={European Conference on Machine Learning and Data Mining, ECML PKDD 2021},
   year={2021}
