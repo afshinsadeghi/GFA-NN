@@ -41,6 +41,17 @@ If you use the model, please cite the following paper:
   year={2021}
 }
 
+
 ```
+
+Link to the paper on the [ECML conference website is here](https://2021.ecmlpkdd.org/wp-content/uploads/2021/07/sub_1096.pdf). 
+
+### FAQ 
+<strong>Q</strong>: How we reproduce the results of the model for the large dataset:
+
+<strong>A</strong>: Large datasets similar to biokg require a large number of iterations.  Since the learning rate reduces during the training we do not suggest setting max_steps to a larger number, instead, we suggest storing the trained model using -save and rerunning the training iteration several times. In our evaluation it executed the training 3 times for biokg. 
+
+<strong>Q</strong>: Is the model open for learning furthur features? 
+<strong>A</strong> Yes, simply by adding another score and a set of embedding weights to it. Please do not forget to normalize the graph features before learning them.
 
 
