@@ -123,3 +123,27 @@ Link to the paper on the [ECML conference website is here](https://2021.ecmlpkdd
 <strong>A</strong>: Yes, simply by adding another score and a set of embedding weights to it. Please do not forget to normalize the graph features before learning them.
 
 
+**Citation**
+To use the code or the proposed idea of the paper, cite the paper:
+
+```
+@InProceedings{10.1007/978-3-030-86520-7_34,
+author="Sadeghi, Afshin
+and Collarana, Diego
+and Graux, Damien
+and Lehmann, Jens",
+editor="Oliver, Nuria
+and P{\'e}rez-Cruz, Fernando
+and Kramer, Stefan
+and Read, Jesse
+and Lozano, Jose A.",
+title="Embedding Knowledge Graphs Attentive to Positional and Centrality Qualities",
+booktitle="Machine Learning and Knowledge Discovery in Databases. Research Track",
+year="2021",
+publisher="Springer International Publishing",
+address="Cham",
+pages="548--564",
+abstract="Knowledge graphs embeddings (KGE) are lately at the center of many artificial intelligence studies due to their applicability for solving downstream tasks, including link prediction and node classification. However, most Knowledge Graph embedding models encode, into the vector space, only the local graph structure of an entity, i.e., information of the 1-hop neighborhood. Capturing not only local graph structure but global features of entities are crucial for prediction tasks on Knowledge Graphs. This work proposes a novel KGE method named Graph Feature Attentive Neural Network (GFA-NN) that computes graphical features of entities. As a consequence, the resulting embeddings are attentive to two types of global network features. First, nodes' relative centrality is based on the observation that some of the entities are more ``prominent'' than the others. Second, the relative position of entities in the graph. GFA-NN computes several centrality values per entity, generates a random set of reference nodes' entities, and computes a given entity's shortest path to each entity in the reference set. It then learns this information through optimization of objectives specified on each of these features. We investigate GFA-NN on several link prediction benchmarks in the inductive and transductive setting and show that GFA-NN achieves on-par or better results than state-of-the-art KGE solutions.",
+isbn="978-3-030-86520-7"
+}
+```
