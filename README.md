@@ -61,28 +61,30 @@ python run_with5_gpu.py --init_checkpoint ../experiments/kge_baselines_biokg_400
 
 #to make it you can just run for 5 epochs.
 
-#incremental training iteration:
-# load the saved model with its data put it in m1
-# new data in new data folder arrives-> generate graph features and dictionary files entities.dic relations.dic 
-#the names of coming files will be like train1.txt train2.txt etc
-# read the new data:
-# load them seperatedyly or putting them in one bigger train.txt file?
-# in this step entity matching must be done, if they are same dedblicate and label the new ones with old ones.
-#then make a larger dataset, still, only train on newly come entities? or their beghbours too? or all the network? 
-#research question: 
-# to what level of neighbours entites must be train?
-# can these subgraphs be trained seperatedly? 
+#### Incremental training iteration:
+```steps
+1. load the saved model with its data put it in m1
+ new data in new data folder arrives-> generate graph features and dictionary files entities.dic relations.dic 
+ the names of coming files will be like train1.txt train2.txt etc
+2. read the new data:
+ load them separately or put them in one bigger train.txt file?
+ In this step, entity matching must be done. If they are the same, deduplicate and label the new ones with the old ones.
+ Then, make a larger dataset, still only train on newly arrived entities, or their neighbors too, or the entire network? 
 
-# make a new model name it m2 with size of m1 plus new entities in m2
-# copy m1 into m2
-# train on new triple t2 + triples of old dataset that have a common entity or relation with t2
-# save new model and aggregated triples.  
+ Research question: 
+ to what level of neighbour entites must be trained?
+ Can these subgraphs be trained separately? 
 
-### Dataset Generation for experimetns:
-for experiments: run create_inc_dataset.py that randomly select triples from train.txt and generates several incoming train files as train1.txt ,train2.txt , ...
+make a new model name it m2 with size of m1 plus new entities in m2
+ copy m1 into m2
+ train on new triple t2 + triples of old dataset that have a common entity or relation with t2
+ save new model and aggregated triples.  
+```
+### Dataset Generation for experiments:
+for experiments: run create_inc_dataset.py that randomly selects triples from train.txt and generates several incoming train files as train1.txt ,train2.txt , ...
 to run: python  create_inc_dataset.py  -data_path data/WN18RR_inc -divisions 5
 
-# GFA-NN model training:
+### GFA-NN model training:
 
 1. step extract features:
 ./extract_graph_features/process.sh
@@ -91,7 +93,7 @@ to run: python  create_inc_dataset.py  -data_path data/WN18RR_inc -divisions 5
 2. step run the embedding:
 python run_incremental.py  --do_train --do_test -save ./experiments/kge_baselines_wn18rr_inc --data_path ./data/WN18RR_inc --train_file train1.txt  --model MDE  -n 500 -b 1000 -d 200 -g 4.0 -a 2.5 -adv -lr .0005 --max_steps 3000 --test_batch_size 2 --valid_steps 3000 --log_steps 3000 --do_valid  -node_feat_path ./data/WN18RR_inc/train_node_features --cuda -psi 14.0
 
-then second run 
+then on the second run 
 
 
 1. external step 1: data integration using entity matching and deduplicates: 
